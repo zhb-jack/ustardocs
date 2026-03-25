@@ -1,0 +1,222 @@
+﻿{
+  "info": {
+    "_postman_id": "f0bc76dd-8948-4609-b823-1bc98c0a101e",
+    "name": "App登录注册KYC联调",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. 发送邮箱验证码",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get('app_email')) {",
+              "  pm.environment.set('app_email', 'app_user_' + Date.now() + '@example.com');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('发送邮箱验证码成功', function () {",
+              "  pm.response.to.have.status(200);",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.success).to.eql(true);",
+              "  pm.expect(json.data.code).to.eql('888888');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{app_email}}\"\n}" },
+        "url": { "raw": "{{base_url}}/auth/v1/app/email/send-code", "host": ["{{base_url}}"], "path": ["auth", "v1", "app", "email", "send-code"] }
+      }
+    },
+    {
+      "name": "2. 校验邮箱验证码",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('校验邮箱验证码成功', function () {",
+              "  pm.response.to.have.status(200);",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.success).to.eql(true);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{app_email}}\",\n  \"code\": \"888888\"\n}" },
+        "url": { "raw": "{{base_url}}/auth/v1/app/email/verify", "host": ["{{base_url}}"], "path": ["auth", "v1", "app", "email", "verify"] }
+      }
+    },
+    {
+      "name": "3. App注册",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('App注册成功', function () {",
+              "  pm.response.to.have.status(200);",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.success).to.eql(true);",
+              "  pm.expect(json.data.session.token).to.be.a('string');",
+              "  pm.environment.set('access_token', json.data.session.token);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{app_email}}\",\n  \"verificationCode\": \"888888\",\n  \"loginPassword\": \"{{app_password}}\",\n  \"transactionPin\": \"{{app_pin}}\",\n  \"countryCode\": \"{{register_country_code}}\"\n}" },
+        "url": { "raw": "{{base_url}}/auth/v1/app/register", "host": ["{{base_url}}"], "path": ["auth", "v1", "app", "register"] }
+      }
+    },
+    {
+      "name": "4. App登录",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('App登录成功', function () {",
+              "  pm.response.to.have.status(200);",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.success).to.eql(true);",
+              "  pm.environment.set('access_token', json.data.token);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{app_email}}\",\n  \"password\": \"{{app_password}}\",\n  \"userType\": \"app\"\n}" },
+        "url": { "raw": "{{base_url}}/auth/v1/login", "host": ["{{base_url}}"], "path": ["auth", "v1", "login"] }
+      }
+    },
+    {
+      "name": "5. 获取国家列表",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('获取国家列表成功', function () {",
+              "  pm.response.to.have.status(200);",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.success).to.eql(true);",
+              "  pm.expect(json.data.length).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/auth/v1/app/countries", "host": ["{{base_url}}"], "path": ["auth", "v1", "app", "countries"] }
+      }
+    },
+    {
+      "name": "6. 获取KYC状态",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('获取KYC状态成功', function () {",
+              "  pm.response.to.have.status(200);",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.success).to.eql(true);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+        "url": { "raw": "{{base_url}}/auth/v1/app/kyc", "host": ["{{base_url}}"], "path": ["auth", "v1", "app", "kyc"] }
+      }
+    },
+    {
+      "name": "7. 提交内部KYC",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('提交内部KYC成功', function () {",
+              "  pm.response.to.have.status(200);",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.success).to.eql(true);",
+              "  pm.expect(json.data.status).to.eql(1);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Li\",\n  \"lastName\": \"Lei\",\n  \"fullName\": \"Li Lei\",\n  \"gender\": \"M\",\n  \"dob\": \"1995-08-18\",\n  \"countryOfBirth\": \"{{kyc_country_alpha3}}\",\n  \"nationality\": \"{{kyc_country_alpha3}}\",\n  \"email\": \"{{app_email}}\",\n  \"phone\": \"13800138000\",\n  \"addressCountry\": \"{{kyc_country_alpha3}}\",\n  \"addressStreet\": \"Pudong Avenue\",\n  \"addressBuildingNumber\": \"100\",\n  \"addressFlatNumber\": \"802\",\n  \"addressTown\": \"Shanghai\",\n  \"addressState\": \"Shanghai\",\n  \"addressPostCode\": \"200120\",\n  \"addressFormattedAddress\": \"Pudong Avenue 100, Room 802, Shanghai\",\n  \"tin\": \"TAX123456\",\n  \"idCardFrontUrl\": \"https://example.com/front.jpg\",\n  \"idCardBackUrl\": \"https://example.com/back.jpg\",\n  \"selfieUrl\": \"https://example.com/selfie.jpg\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/auth/v1/app/kyc", "host": ["{{base_url}}"], "path": ["auth", "v1", "app", "kyc"] }
+      }
+    },
+    {
+      "name": "8. 再次获取KYC状态",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('KYC状态已更新为通过', function () {",
+              "  pm.response.to.have.status(200);",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.success).to.eql(true);",
+              "  pm.expect(json.data.status).to.eql(1);",
+              "  pm.expect(json.data.isInternalKyc).to.eql(1);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+        "url": { "raw": "{{base_url}}/auth/v1/app/kyc", "host": ["{{base_url}}"], "path": ["auth", "v1", "app", "kyc"] }
+      }
+    }
+  ]
+}

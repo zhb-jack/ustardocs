@@ -1,0 +1,259 @@
+﻿version: '3.8'
+
+services:
+  # ==================== PostgreSQL 鏁版嵁搴撴湇鍔?====================
+  kong-database:
+    image: postgres:15-alpine
+    container_name: kong-postgres
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_DB: kong
+      POSTGRES_PASSWORD: kong123
+    volumes:
+      - kong_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - digital-custody-network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "kong"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  go-services-database:
+    image: postgres:15-alpine
+    container_name: go-services-postgres
+    environment:
+      POSTGRES_DB: nh_wallet
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - digital-custody-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ==================== Redis 缂撳瓨鏈嶅姟 ====================
+  redis:
+    image: redis:7-alpine
+    container_name: go-services-redis  
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      - digital-custody-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  # ==================== NATS JetStream 娑堟伅闃熷垪 ====================
+  nats:
+    image: nats:2.10-alpine
+    container_name: go-services-nats
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+      - "6222:6222"
+    command: 
+      - "--jetstream"
+      - "--store_dir=/data"
+      - "--http_port=8222"
+    volumes:
+      - nats_data:/data
+    networks:
+      - digital-custody-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8222/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ==================== Jaeger 閾捐矾杩借釜 ====================
+  jaeger:
+    image: jaegertracing/all-in-one:1.48
+    container_name: go-services-jaeger
+    ports:
+      - "16686:16686"
+      - "14268:14268"
+    environment:
+      COLLECTOR_OTLP_ENABLED: true
+    networks:
+      - digital-custody-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O-", "http://localhost:14269/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # # ==================== Prometheus 鐩戞帶 ====================
+  # prometheus:
+  #   image: prom/prometheus:v2.45.0
+  #   container_name: go-services-prometheus
+  #   ports:
+  #     - "9090:9090"
+  #   volumes:
+  #     - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+  #     - prometheus_data:/prometheus
+  #   command:
+  #     - '--config.file=/etc/prometheus/prometheus.yml'
+  #     - '--storage.tsdb.path=/prometheus'
+  #     - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+  #     - '--web.console.templates=/usr/share/prometheus/consoles'
+  #     - '--web.enable-lifecycle'
+  #   networks:
+  #     - digital-custody-network
+  #   healthcheck:
+  #     test: ["CMD", "wget", "-q", "-O-", "http://localhost:9090/-/healthy"]
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 5
+
+  # # ==================== Grafana 鍙鍖?====================
+  # grafana:
+  #   image: grafana/grafana:10.0.0
+  #   container_name: go-services-grafana
+  #   ports:
+  #     - "3002:3000"  # 澶栭儴绔彛鏀逛负3002锛屽唴閮ㄧ鍙ｄ繚鎸?000
+  #   environment:
+  #     GF_SECURITY_ADMIN_PASSWORD: admin
+  #     GF_INSTALL_PLUGINS: grafana-piechart-panel
+  #   volumes:
+  #     - grafana_data:/var/lib/grafana
+  #     - ./config/grafana:/etc/grafana/provisioning
+  #   networks:
+  #     - digital-custody-network
+  #   healthcheck:
+  #     test: ["CMD", "wget", "-q", "-O-", "http://localhost:3000/api/health"]
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 5
+
+  # ==================== Kong API 缃戝叧 ====================
+  kong-bootstrap:
+    image: kong:3.4
+    container_name: kong-bootstrap
+    depends_on:
+      kong-database:
+        condition: service_healthy
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: kong-database
+      KONG_PG_PORT: 5432
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong123
+      KONG_PG_DATABASE: kong
+    command: kong migrations bootstrap
+    networks:
+      - digital-custody-network
+    restart: "no"
+
+  kong:
+    image: kong:3.4
+    container_name: kong-gateway
+    depends_on:
+      kong-bootstrap:
+        condition: service_completed_successfully
+      kong-database:
+        condition: service_healthy
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: kong-database
+      KONG_PG_PORT: 5432
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong123
+      KONG_PG_DATABASE: kong
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+      KONG_PROXY_LISTEN: 0.0.0.0:8000
+      KONG_ADMIN_GUI_LISTEN: 0.0.0.0:8002
+      KONG_PLUGINS: bundled,prometheus
+      KONG_PLUGINSERVER_NAMES: prometheus
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    volumes:
+      - ./config/kong:/opt/kong/config
+      - ./logs/kong:/opt/kong/logs
+    networks:
+      - digital-custody-network
+    healthcheck:
+      test: ["CMD", "kong", "health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+  # # ==================== 璁よ瘉鏈嶅姟 ====================
+  # auth-service:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: go-auth-service
+  #   environment:
+  #     NH_JWT_SECRET: "ac5e9f2c1b74471d83eae69a25f1d81f5d8d7c7801e14620b2ffb347ed3816e1"
+  #     NH_SECURITY_ENCRYPTION_KEY: "ac5e9f2c1b74471d83eae69a25f1d81f5d8d7c7801e14620b2ffb347ed3816e1"
+  #     # 搴旂敤閰嶇疆
+  #     APP_NAME: "auth-service"
+  #     APP_PORT: "18001"
+  #     APP_HOST: "0.0.0.0"
+  #     APP_ENVIRONMENT: "development"
+  #     APP_DEBUG: "true"
+  #     # 鏁版嵁搴撻厤缃?- 缁熶竴浣跨敤鏈嶅姟鍚?
+  #     DB_HOST: "go-services-database"
+  #     DB_PORT: "5432"
+  #     DB_NAME: "nh_wallet"
+  #     DB_USER: "postgres"
+  #     DB_PASSWORD: "postgres"
+  #     # 鍏朵粬鏈嶅姟# 鍏朵粬鏈嶅姟
+  #     REDIS_HOST: "redis"
+  #     REDIS_PORT: "6379"
+  #     JWT_SECRET: "ac5e9f2c1b74471d83eae69a25f1d81f5d8d7c7801e14620b2ffb347ed3816e1"
+  #     NATS_URL: "nats://nats:4222"
+  #   depends_on:
+  #     go-services-database:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #     nats:
+  #       condition: service_healthy
+  #   networks:
+  #     - digital-custody-network
+  #   volumes:
+  #     - ./logs/auth-service:/app/logs
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://localhost:18001/health"]
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 3
+  #     start_period: 40s
+
+networks:
+  digital-custody-network:
+    driver: bridge
+
+volumes:
+  kong_data:
+  postgres_data:
+  redis_data:
+  nats_data:
+  prometheus_data:
+  grafana_data:

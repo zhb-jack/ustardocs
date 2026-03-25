@@ -1,0 +1,107 @@
+Starting project at D:\snow\ustarpay-app
+Starting Metro Bundler
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Web node_modules\expo-router\entry.js ▓▓▓▓░░░░░░░░░░░░ 29.8% (126/286)
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 69.8% (826/989)
+Web Bundled 8828ms node_modules\expo-router\entry.js (1389 modules)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 53ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 52ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 42ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+ ERROR  SyntaxError: D:\snow\ustarpay-app\app\profile.tsx: Unterminated string constant. (76:31)
+
+  74 |           </Text>
+  75 |           <Text style={{ fontSize: fontSize.sm, color: c.text.muted, marginTop: 6 }}>
+> 76 |             {session?.email || "鏈櫥褰曢偖绠?}
+     |                                ^
+  77 |           </Text>
+  78 |
+  79 |           <View
+    at constructor (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:6599:19)
+    at Object.unterminated (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:5664:20)
+    at readStringContents (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:5406:16)
+    at TypeScriptParserMixin.readString (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:6498:9)
+    at TypeScriptParserMixin.getTokenFromCode (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:6258:14)
+    at TypeScriptParserMixin.getTokenFromCode (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4797:11)
+    at TypeScriptParserMixin.getTokenFromCode (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:9987:11)
+    at TypeScriptParserMixin.nextToken (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:5782:10)
+    at TypeScriptParserMixin.next (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:5692:10)
+    at TypeScriptParserMixin.parseExprOp (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10939:14)
+    at TypeScriptParserMixin.parseExprOp (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:9306:18)
+    at TypeScriptParserMixin.parseExprOps (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10908:17)
+    at TypeScriptParserMixin.parseMaybeConditional (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10881:23)
+    at TypeScriptParserMixin.parseMaybeAssign (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10831:21)
+    at TypeScriptParserMixin.parseMaybeAssign (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:9786:20)
+    at TypeScriptParserMixin.parseExpressionBase (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10784:23)
+    at D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10780:39
+    at TypeScriptParserMixin.allowInAnd (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:12426:12)
+    at TypeScriptParserMixin.parseExpression (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10780:17)
+    at TypeScriptParserMixin.jsxParseExpressionContainer (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4632:31)
+    at TypeScriptParserMixin.jsxParseElementAt (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4711:36)
+    at TypeScriptParserMixin.jsxParseElementAt (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4698:32)
+    at TypeScriptParserMixin.jsxParseElementAt (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4698:32)
+    at TypeScriptParserMixin.jsxParseElementAt (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4698:32)
+    at TypeScriptParserMixin.jsxParseElement (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4749:17)
+    at TypeScriptParserMixin.parseExprAtom (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4759:19)
+    at TypeScriptParserMixin.parseExprSubscripts (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:11081:23)
+    at TypeScriptParserMixin.parseUpdate (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:11066:21)
+    at TypeScriptParserMixin.parseMaybeUnary (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:11046:23)
+    at TypeScriptParserMixin.parseMaybeUnary (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:9837:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10899:61)
+    at TypeScriptParserMixin.parseExprOps (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10904:23)
+    at TypeScriptParserMixin.parseMaybeConditional (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10881:23)
+    at TypeScriptParserMixin.parseMaybeAssign (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10831:21)
+    at D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:9775:39
+    at TypeScriptParserMixin.tryParse (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:6907:20)
+    at TypeScriptParserMixin.parseMaybeAssign (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:9775:18)
+    at D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10800:39
+    at TypeScriptParserMixin.allowInAnd (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:12426:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10800:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:12493:17)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:11675:28)
+    at TypeScriptParserMixin.parseExprAtom (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:11331:23)
+    at TypeScriptParserMixin.parseExprAtom (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:4764:20)
+    at TypeScriptParserMixin.parseExprSubscripts (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:11081:23)
+    at TypeScriptParserMixin.parseUpdate (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:11066:21)
+    at TypeScriptParserMixin.parseMaybeUnary (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:11046:23)
+    at TypeScriptParserMixin.parseMaybeUnary (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:9837:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\snow\ustarpay-app\node_modules\@babel\parser\lib\index.js:10899:61)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 43ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 49ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 81ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 91ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 41ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 69ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 53ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 62ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 160ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 65ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console

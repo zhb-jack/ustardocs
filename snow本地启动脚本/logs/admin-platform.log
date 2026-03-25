@@ -1,0 +1,20 @@
+
+> admin-platform@1.0.0 dev D:\snow\ustarpay-frontend-admin\admin-platform
+> vite "--host" "0.0.0.0"
+
+Re-optimizing dependencies because lockfile has changed
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m2464[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://198.18.0.1:[1m3000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.1.17:[1m3000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.21.0.1:[1m3000[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+
+[1m[33mwarn[39m[22m - Your `content` configuration includes a pattern which looks like it's accidentally matching all of `node_modules` and can cause serious performance issues.
+[1m[33mwarn[39m[22m - Pattern: `..\shared\**\*.ts`
+[1m[33mwarn[39m[22m - See our documentation for recommendations:
+[1m[33mwarn[39m[22m - https://tailwindcss.com/docs/content-configuration#pattern-recommendations
+[2m16:32:08[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Tenant/TenantDetailPage.tsx, /src/index.css, /src/pages/User/components/UserTable.tsx, /src/pages/User/components/UserRoleAssignmentModal.tsx, /@fs/D:/snow/ustarpay-frontend-admin/shared/components/StatusBadge.tsx, /src/pages/User/components/UserDetailModal.tsx[22m
+[2m21:23:51[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Tenant/TenantDetailPage.tsx, /src/index.css, /src/pages/User/components/UserTable.tsx, /src/pages/User/components/UserRoleAssignmentModal.tsx, /@fs/D:/snow/ustarpay-frontend-admin/shared/components/StatusBadge.tsx, /src/pages/User/components/UserDetailModal.tsx[22m

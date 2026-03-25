@@ -1,0 +1,189 @@
+2026/03/15 14:35:40 🚀 Starting webhook-service
+Version: 1.0.0
+BuildTime: 
+GitCommit: 
+GitTag: 
+GoVersion: go1.24.13
+Platform: windows/amd64
+{"fields.level":"debug","format":"json","level":"info","message":"日志系统初始化成功","output":"console","timestamp":"2026-03-15T14:35:40+08:00"}
+{"backend":"OpenTelemetry","endpoint":"http://localhost:14268/api/traces","level":"info","message":"Tracing initialized with OpenTelemetry backend","sample_rate":1,"service_name":"webhook-service","timestamp":"2026-03-15T14:35:40+08:00"}
+{"enabled":true,"endpoint":"http://localhost:14268/api/traces","level":"info","message":"OpenTelemetry tracer initialized successfully","service":"webhook-service","timestamp":"2026-03-15T14:35:40+08:00"}
+time="2026-03-15T14:35:40+08:00" level=info msg="数据库连接成功" database=nh_wallet host=localhost port=5432 user=postgres
+time="2026-03-15T14:35:40+08:00" level=info msg="Redis连接成功" addr="localhost:6379" db=0
+{"client_id":"nh-wallet-client","level":"info","message":"初始化全局NATS连接","timestamp":"2026-03-15T14:35:40+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCNOT7EUCG4A2XZ2FS43UDSVEZ4P3AXZVV5YC4UJLUUTKOMXA7HVSM3U","timestamp":"2026-03-15T14:35:40+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"Global NATS client initialized successfully","timestamp":"2026-03-15T14:35:40+08:00","url":"nats://localhost:4222"}
+{"level":"info","message":"NATS全局客户端初始化成功","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"Repository initialized successfully","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"Services initialized successfully","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"Handlers initialized successfully","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T14:35:40+08:00"}
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> nh/wallet/pkg/health.(*Checker).Health-fm (8 handlers)
+[GIN-debug] POST   /api/v1/callbacks/execute --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).ExecuteCallback-fm (9 handlers)
+[GIN-debug] GET    /api/v1/callbacks/status/:id --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).GetCallbackStatus-fm (9 handlers)
+[GIN-debug] POST   /api/v1/callbacks/retry/:id --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).RetryCallback-fm (9 handlers)
+[GIN-debug] POST   /api/v1/internal/wallet/created --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).HandleWalletCreated-fm (9 handlers)
+[GIN-debug] POST   /api/v1/internal/deposit/confirmed --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).HandleDepositConfirmed-fm (9 handlers)
+[GIN-debug] POST   /api/v1/internal/withdraw/completed --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).HandleWithdrawCompleted-fm (9 handlers)
+{"consumer_name":"webhook_wallet_created","level":"info","message":"Consumer created successfully","stream_name":"WALLETS","timestamp":"2026-03-15T14:35:40+08:00"}
+{"consumer_name":"webhook_wallet_created","level":"info","message":"Started consuming messages","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T14:35:40+08:00"}
+{"consumer_name":"webhook_deposit_confirmed","level":"info","message":"Consumer created successfully","stream_name":"DEPOSITS","timestamp":"2026-03-15T14:35:40+08:00"}
+{"consumer_name":"webhook_deposit_confirmed","level":"info","message":"Started consuming messages","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T14:35:40+08:00"}
+{"consumer_name":"webhook_withdraw_completed","level":"info","message":"Consumer created successfully","stream_name":"WITHDRAWS","timestamp":"2026-03-15T14:35:40+08:00"}
+{"consumer_name":"webhook_withdraw_completed","level":"info","message":"Started consuming messages","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T14:35:40+08:00"}
+{"buildInfo":null,"env":"development","host":"127.0.0.1","level":"info","message":"Webhook Service启动完成","port":18005,"timestamp":"2026-03-15T14:35:40+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T14:35:43+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T14:35:43+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCNOT7EUCG4A2XZ2FS43UDSVEZ4P3AXZVV5YC4UJLUUTKOMXA7HVSM3U","timestamp":"2026-03-15T14:35:43+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T14:35:43+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T14:35:43+08:00"}
+{"duration_ms":784,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-15T14:35:44+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":784,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"a5dd56ab-5e80-4924-b67b-4c54bbc14b18","status_code":200,"timestamp":"2026-03-15T14:35:44+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T14:35:46+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T14:35:46+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCNOT7EUCG4A2XZ2FS43UDSVEZ4P3AXZVV5YC4UJLUUTKOMXA7HVSM3U","timestamp":"2026-03-15T14:35:46+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T14:35:46+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T14:35:46+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":648,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"73121f3a-3478-4e34-9522-77360e3e571e","status_code":200,"timestamp":"2026-03-15T14:35:47+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":648,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-15T14:35:47+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T14:36:13+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T14:36:13+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCNOT7EUCG4A2XZ2FS43UDSVEZ4P3AXZVV5YC4UJLUUTKOMXA7HVSM3U","timestamp":"2026-03-15T14:36:13+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T14:36:13+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T14:36:13+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":657,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"64161a55-c9ab-403d-853e-54cb95760250","status_code":200,"timestamp":"2026-03-15T14:36:14+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":657,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-15T14:36:14+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T14:36:51+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T14:36:51+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCNOT7EUCG4A2XZ2FS43UDSVEZ4P3AXZVV5YC4UJLUUTKOMXA7HVSM3U","timestamp":"2026-03-15T14:36:51+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T14:36:51+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T14:36:51+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":480,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"e920f494-2b10-4112-85ed-140133cbda8d","status_code":200,"timestamp":"2026-03-15T14:36:51+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":480,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-15T14:36:51+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T15:03:45+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T15:03:45+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCNOT7EUCG4A2XZ2FS43UDSVEZ4P3AXZVV5YC4UJLUUTKOMXA7HVSM3U","timestamp":"2026-03-15T15:03:45+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T15:03:45+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T15:03:45+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":901,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"fcf335ff-712e-48aa-9fa8-0fcc2f7fcdd1","status_code":200,"timestamp":"2026-03-15T15:03:46+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":901,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-15T15:03:46+08:00"}
+{"client_id":"nh-wallet-client","error":"read tcp 127.0.0.1:60559-\u003e127.0.0.1:4222: wsarecv: An existing connection was forcibly closed by the remote host.","level":"error","message":"NATS disconnected","timestamp":"2026-03-15T20:34:26+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T20:34:47+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T21:56:04+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T21:56:04+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCM5ROT4LTVBLPAEN5LYRB4XM2XHXJ72JPYRQDPCQKA36LPMKBLGQUPJ","timestamp":"2026-03-15T21:56:05+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T21:56:05+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T21:56:05+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":854,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"80849d3b-9759-4de3-8524-dbcca0ef9700","status_code":200,"timestamp":"2026-03-15T21:56:05+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":843,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-15T21:56:05+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T21:56:07+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T21:56:07+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCM5ROT4LTVBLPAEN5LYRB4XM2XHXJ72JPYRQDPCQKA36LPMKBLGQUPJ","timestamp":"2026-03-15T21:56:07+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T21:56:07+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T21:56:07+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":345,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"4d4f8c9c-e524-447a-ad6c-f1cb04a33122","status_code":200,"timestamp":"2026-03-15T21:56:07+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":345,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-15T21:56:07+08:00"}
+{"level":"info","message":"[shutdown] Received signal: %v","signal":15,"timestamp":"2026-03-15T22:22:55+08:00"}
+{"level":"info","message":"[shutdown] Stopping accepting new requests","timestamp":"2026-03-15T22:22:55+08:00"}
+{"level":"info","message":"[shutdown] Starting graceful shutdown...","timestamp":"2026-03-15T22:22:55+08:00"}
+{"level":"info","message":"[shutdown] All active tasks completed","timestamp":"2026-03-15T22:22:55+08:00"}
+{"level":"info","message":"[shutdown] Closing database connection...","timestamp":"2026-03-15T22:22:55+08:00"}
+2026/03/17 15:09:49 🚀 Starting webhook-service
+Version: 1.0.0
+BuildTime: 
+GitCommit: 
+GitTag: 
+GoVersion: go1.24.13
+Platform: windows/amd64
+{"fields.level":"debug","format":"json","level":"info","message":"日志系统初始化成功","output":"console","timestamp":"2026-03-17T15:09:49+08:00"}
+{"backend":"OpenTelemetry","endpoint":"http://localhost:14268/api/traces","level":"info","message":"Tracing initialized with OpenTelemetry backend","sample_rate":1,"service_name":"webhook-service","timestamp":"2026-03-17T15:09:49+08:00"}
+{"enabled":true,"endpoint":"http://localhost:14268/api/traces","level":"info","message":"OpenTelemetry tracer initialized successfully","service":"webhook-service","timestamp":"2026-03-17T15:09:49+08:00"}
+time="2026-03-17T15:09:49+08:00" level=info msg="数据库连接成功" database=nh_wallet host=localhost port=5432 user=postgres
+time="2026-03-17T15:09:49+08:00" level=info msg="Redis连接成功" addr="localhost:6379" db=0
+{"client_id":"nh-wallet-client","level":"info","message":"初始化全局NATS连接","timestamp":"2026-03-17T15:09:49+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NBNQBDIQLY42OST3N77CVJUPGWKEQFRCKFATBFHNV7A2JNT6IWRPRB4P","timestamp":"2026-03-17T15:09:49+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"Global NATS client initialized successfully","timestamp":"2026-03-17T15:09:49+08:00","url":"nats://localhost:4222"}
+{"level":"info","message":"NATS全局客户端初始化成功","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"Repository initialized successfully","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"Services initialized successfully","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"Handlers initialized successfully","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-17T15:09:49+08:00"}
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> nh/wallet/pkg/health.(*Checker).Health-fm (8 handlers)
+[GIN-debug] POST   /api/v1/callbacks/execute --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).ExecuteCallback-fm (9 handlers)
+[GIN-debug] GET    /api/v1/callbacks/status/:id --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).GetCallbackStatus-fm (9 handlers)
+[GIN-debug] POST   /api/v1/callbacks/retry/:id --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).RetryCallback-fm (9 handlers)
+[GIN-debug] POST   /api/v1/internal/wallet/created --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).HandleWalletCreated-fm (9 handlers)
+[GIN-debug] POST   /api/v1/internal/deposit/confirmed --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).HandleDepositConfirmed-fm (9 handlers)
+[GIN-debug] POST   /api/v1/internal/withdraw/completed --> nh/wallet/internal/adapters/http/webhook/handler.(*WebhookHandler).HandleWithdrawCompleted-fm (9 handlers)
+{"consumer_name":"webhook_wallet_created","level":"info","message":"Consumer created successfully","stream_name":"WALLETS","timestamp":"2026-03-17T15:09:49+08:00"}
+{"consumer_name":"webhook_wallet_created","level":"info","message":"Started consuming messages","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-17T15:09:49+08:00"}
+{"consumer_name":"webhook_deposit_confirmed","level":"info","message":"Consumer created successfully","stream_name":"DEPOSITS","timestamp":"2026-03-17T15:09:49+08:00"}
+{"consumer_name":"webhook_deposit_confirmed","level":"info","message":"Started consuming messages","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-17T15:09:49+08:00"}
+{"consumer_name":"webhook_withdraw_completed","level":"info","message":"Consumer created successfully","stream_name":"WITHDRAWS","timestamp":"2026-03-17T15:09:49+08:00"}
+{"consumer_name":"webhook_withdraw_completed","level":"info","message":"Started consuming messages","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-17T15:09:49+08:00"}
+{"buildInfo":null,"env":"development","host":"127.0.0.1","level":"info","message":"Webhook Service启动完成","port":18005,"timestamp":"2026-03-17T15:09:49+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-17T15:09:51+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-17T15:09:51+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NBNQBDIQLY42OST3N77CVJUPGWKEQFRCKFATBFHNV7A2JNT6IWRPRB4P","timestamp":"2026-03-17T15:09:51+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-17T15:09:51+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-17T15:09:51+08:00"}
+{"duration_ms":1575,"level":"info","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-17T15:09:53+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":1575,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"1123cd44-95cc-4787-b264-d233780ca84c","status_code":200,"timestamp":"2026-03-17T15:09:53+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-17T15:09:55+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-17T15:09:55+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NBNQBDIQLY42OST3N77CVJUPGWKEQFRCKFATBFHNV7A2JNT6IWRPRB4P","timestamp":"2026-03-17T15:09:55+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-17T15:09:55+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-17T15:09:55+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":343,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"59f7ef8a-e9fd-4d39-9b1e-bd9f2fde2840","status_code":200,"timestamp":"2026-03-17T15:09:56+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":343,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-17T15:09:56+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-17T15:11:09+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-17T15:11:09+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NBNQBDIQLY42OST3N77CVJUPGWKEQFRCKFATBFHNV7A2JNT6IWRPRB4P","timestamp":"2026-03-17T15:11:09+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-17T15:11:09+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-17T15:11:09+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":618,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"3fefb889-78ef-4f50-9c62-59563ca8fb9e","status_code":200,"timestamp":"2026-03-17T15:11:10+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":617,"level":"debug","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-17T15:11:10+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-20T22:51:55+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-20T22:51:55+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NBNQBDIQLY42OST3N77CVJUPGWKEQFRCKFATBFHNV7A2JNT6IWRPRB4P","timestamp":"2026-03-20T22:51:55+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-20T22:51:55+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-20T22:51:55+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":4416,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"6a8f27e5-c7cf-4972-a22e-098d599004fa","status_code":200,"timestamp":"2026-03-20T22:51:59+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":4403,"level":"info","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-20T22:51:59+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-20T23:09:13+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-20T23:09:13+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NBNQBDIQLY42OST3N77CVJUPGWKEQFRCKFATBFHNV7A2JNT6IWRPRB4P","timestamp":"2026-03-20T23:09:13+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-20T23:09:13+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-20T23:09:13+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":3471,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"aa61b3d9-4e7c-497b-89b0-1cd968a25c83","status_code":200,"timestamp":"2026-03-20T23:09:16+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"duration_ms":3471,"level":"info","message":"性能监控","method":"GET","operation":"GET /health","path":"/health","status_code":200,"timestamp":"2026-03-20T23:09:16+08:00"}
+{"client_id":"nh-wallet-client","error":"read tcp [::1]:53987-\u003e[::1]:4222: wsarecv: An existing connection was forcibly closed by the remote host.","level":"error","message":"NATS disconnected","timestamp":"2026-03-25T09:27:35+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-25T09:27:56+08:00"}
+{"level":"info","message":"[shutdown] Received signal: %v","signal":15,"timestamp":"2026-03-25T09:27:57+08:00"}
+{"level":"info","message":"[shutdown] Stopping accepting new requests","timestamp":"2026-03-25T09:27:57+08:00"}
+{"level":"info","message":"[shutdown] Starting graceful shutdown...","timestamp":"2026-03-25T09:27:57+08:00"}
+{"level":"info","message":"[shutdown] All active tasks completed","timestamp":"2026-03-25T09:27:57+08:00"}
+{"level":"info","message":"[shutdown] Closing database connection...","timestamp":"2026-03-25T09:27:57+08:00"}
+{"level":"info","message":"[shutdown] Database closed","timestamp":"2026-03-25T09:27:58+08:00"}
+{"level":"info","message":"[shutdown] Flushing metrics before shutdown...","timestamp":"2026-03-25T09:27:58+08:00"}
+{"level":"info","message":"Shutting down Webhook Service HTTP server...","timestamp":"2026-03-25T09:27:58+08:00"}

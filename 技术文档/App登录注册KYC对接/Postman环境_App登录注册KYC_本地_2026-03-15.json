@@ -1,0 +1,16 @@
+﻿{
+  "id": "6c4235c1-0f1f-4ec0-b7d8-8a4f94626177",
+  "name": "App登录注册KYC-本地环境",
+  "values": [
+    { "key": "base_url", "value": "http://127.0.0.1:8000", "type": "default", "enabled": true },
+    { "key": "app_email", "value": "", "type": "default", "enabled": true },
+    { "key": "app_password", "value": "Aa!12345", "type": "default", "enabled": true },
+    { "key": "app_pin", "value": "123456", "type": "default", "enabled": true },
+    { "key": "register_country_code", "value": "CN", "type": "default", "enabled": true },
+    { "key": "kyc_country_alpha3", "value": "CHN", "type": "default", "enabled": true },
+    { "key": "access_token", "value": "", "type": "default", "enabled": true }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2026-03-15T20:10:00+08:00",
+  "_postman_exported_using": "Codex GPT-5"
+}

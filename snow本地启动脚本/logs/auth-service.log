@@ -1,0 +1,308 @@
+2026/03/15 19:38:23 🚀 Starting auth-service
+Version: 1.0.0
+BuildTime: 
+GitCommit: 
+GitTag: 
+GoVersion: go1.24.13
+Platform: windows/amd64
+{"fields.level":"debug","format":"json","level":"info","message":"日志系统初始化成功","output":"console","timestamp":"2026-03-15T19:38:23+08:00"}
+{"backend":"OpenTelemetry","endpoint":"http://localhost:14268/api/traces","level":"info","message":"Tracing initialized with OpenTelemetry backend","sample_rate":1,"service_name":"auth-service","timestamp":"2026-03-15T19:38:23+08:00"}
+{"enabled":true,"endpoint":"http://localhost:14268/api/traces","level":"info","message":"OpenTelemetry tracer initialized successfully","service":"auth-service","timestamp":"2026-03-15T19:38:23+08:00"}
+time="2026-03-15T19:38:23+08:00" level=info msg="数据库连接成功" database=nh_wallet host=localhost port=5432 user=postgres
+time="2026-03-15T19:38:23+08:00" level=info msg="Redis连接成功" addr="localhost:6379" db=0
+{"components":"repositories, services, handlers, infrastructure","level":"info","message":"Auth依赖注入完成","service":"auth","timestamp":"2026-03-15T19:38:23+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T19:38:23+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T19:38:23+08:00"}
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> nh/wallet/pkg/health.(*Checker).Health-fm (8 handlers)
+[GIN-debug] GET    /ready                    --> nh/wallet/internal/adapters/http/auth/routes.RegisterAPIRoutes.func1 (8 handlers)
+[GIN-debug] POST   /auth/v1/login            --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).Login-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/refresh          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).RefreshToken-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/validate         --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ValidateToken-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/permission/check --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).CheckPermission-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/email/send-code --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).SendAppEmailCode-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/email/verify --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).VerifyAppEmailCode-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/register     --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).RegisterAppUser-fm (9 handlers)
+[GIN-debug] GET    /auth/v1/app/countries    --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetCountryOptions-fm (9 handlers)
+[GIN-debug] GET    /auth/v1/auth/profile     --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetProfile-fm (10 handlers)
+[GIN-debug] POST   /auth/v1/auth/password/change --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ChangePassword-fm (10 handlers)
+[GIN-debug] POST   /auth/v1/auth/logout      --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).Logout-fm (10 handlers)
+[GIN-debug] GET    /auth/v1/app/profile      --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetAppProfile-fm (11 handlers)
+[GIN-debug] GET    /auth/v1/app/kyc          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetAppKYC-fm (11 handlers)
+[GIN-debug] PUT    /auth/v1/app/kyc          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).SubmitAppKYC-fm (11 handlers)
+[GIN-debug] POST   /internal/v1/auth/validate --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ValidateToken-fm (9 handlers)
+[GIN-debug] POST   /internal/v1/auth/permission/check --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).CheckPermission-fm (9 handlers)
+{"level":"info","message":"认证路由初始化完成","service":"auth","timestamp":"2026-03-15T19:38:23+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T19:38:23+08:00"}
+{"buildInfo":null,"env":"development","host":"127.0.0.1","level":"info","message":"认证服务启动完成","port":18001,"timestamp":"2026-03-15T19:38:23+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:38:28+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:38:28+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCNOT7EUCG4A2XZ2FS43UDSVEZ4P3AXZVV5YC4UJLUUTKOMXA7HVSM3U","timestamp":"2026-03-15T19:38:28+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T19:38:28+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T19:38:28+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":734,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"6ae78b2d-4375-4729-92f2-655f5fddfc74","status_code":200,"timestamp":"2026-03-15T19:38:29+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:38:47+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:38:47+08:00"}
+{"client_ip":"172.19.0.1","duration_ms":0,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/app/email/send-code","request_id":"74198057-7ada-41dc-b373-7cab64d521a2","status_code":200,"timestamp":"2026-03-15T19:38:47+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:38:47+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:38:47+08:00"}
+time="2026-03-15T19:38:47+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:369\n[7.438ms] [rows:0] SELECT * FROM \"tenant_user\" WHERE LOWER(email) = 'codex_app_live_001@example.com' ORDER BY \"tenant_user\".\"id\" LIMIT 1"
+time="2026-03-15T19:38:47+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:359\n[2.667ms] [rows:1] SELECT * FROM \"tenants\" WHERE (status = 1 AND deleted_at IS NULL) AND \"tenants\".\"deleted_at\" IS NULL ORDER BY created_at ASC,\"tenants\".\"id\" LIMIT 1"
+time="2026-03-15T19:38:48+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:388\n[6.713ms] [rows:1] INSERT INTO \"tenant_user\" (\"id\",\"user_name\",\"account_level\",\"tenant_id\",\"profile_photo\",\"gender\",\"profession\",\"country_code\",\"birth_day\",\"login_password\",\"transaction_pin\",\"invitation_code\",\"email\",\"phone_area_code\",\"phone\",\"is_kyc_internal\",\"is_kyc_genuine\",\"kyc_fail_reason\",\"status\",\"invited_uid\",\"register_time\",\"update_time\",\"last_login_ip\",\"last_login_time\",\"remark\") VALUES ('019cf14a-a803-7c2b-bbe0-bdbb35d3c005','codex_app_live_001',1,'7b49a938-0f04-4a21-987d-627417816f49','',1,'4',NULL,NULL,'$2a$12$.ejh5SMWsVvdBsFMYnBiLufGqGrL41yarrLRkYG8HJ7vOjjOeGR1W','$2a$12$F935bRcrRsxpKv5BHWfmk.Q8JZ6AtKlvYQCAKZ4nGLvOxNn2nDnIa',NULL,'codex_app_live_001@example.com',NULL,NULL,0,0,NULL,1,NULL,'2026-03-15 19:38:48.086','2026-03-15 19:38:48.086',NULL,NULL,'App 自助注册')"
+{"client_ip":"172.19.0.1","duration_ms":422,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/app/register","request_id":"686d1c41-7e60-49f8-8e1c-288968a5698d","status_code":200,"timestamp":"2026-03-15T19:38:48+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:38:49+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:38:49+08:00"}
+time="2026-03-15T19:38:49+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:160\n[3.708ms] [rows:-] \n        SELECT id, user_name, email, login_password, tenant_id, status,\n               last_login_time, COALESCE(last_login_ip, '') AS last_login_ip,\n               register_time, update_time\n        FROM tenant_user\n        WHERE (user_name = '' OR email = 'codex_app_live_001@example.com')\n        LIMIT 1"
+time="2026-03-15T19:38:50+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:335\n[25.149ms] [rows:1] UPDATE tenant_user SET last_login_time = '2026-03-15 19:38:50.059', last_login_ip = '172.19.0.1', update_time = '2026-03-15 19:38:50.059' WHERE id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005'"
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T19:38:50+08:00","user_id":"019cf14a-a803-7c2b-bbe0-bdbb35d3c005","username":"codex_app_live_001"}
+{"client_ip":"172.19.0.1","duration_ms":264,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"3669940c-64d8-4d0e-a1a7-4fa6a9eec9dc","status_code":200,"timestamp":"2026-03-15T19:38:50+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:39:09+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:39:09+08:00"}
+time="2026-03-15T19:39:09+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:160\n[2.008ms] [rows:-] \n        SELECT id, user_name, email, login_password, tenant_id, status,\n               last_login_time, COALESCE(last_login_ip, '') AS last_login_ip,\n               register_time, update_time\n        FROM tenant_user\n        WHERE (user_name = '' OR email = 'codex_app_live_001@example.com')\n        LIMIT 1"
+time="2026-03-15T19:39:09+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:335\n[5.999ms] [rows:1] UPDATE tenant_user SET last_login_time = '2026-03-15 19:39:09.695', last_login_ip = '172.19.0.1', update_time = '2026-03-15 19:39:09.695' WHERE id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005'"
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T19:39:09+08:00","user_id":"019cf14a-a803-7c2b-bbe0-bdbb35d3c005","username":"codex_app_live_001"}
+{"client_ip":"172.19.0.1","duration_ms":240,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"27d9255c-aaca-4fa7-99cc-c0c31f77220a","status_code":200,"timestamp":"2026-03-15T19:39:09+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:39:09+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:39:09+08:00"}
+time="2026-03-15T19:39:09+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:379\n[1.578ms] [rows:1] SELECT * FROM \"tenant_user\" WHERE id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005' ORDER BY \"tenant_user\".\"id\" LIMIT 1"
+time="2026-03-15T19:39:09+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:394\n[11.437ms] [rows:0] SELECT * FROM \"tenant_user_kyc\" WHERE user_id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005' AND deleted_at IS NULL ORDER BY \"tenant_user_kyc\".\"id\" LIMIT 1"
+{"client_ip":"172.19.0.1","duration_ms":13,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/auth/v1/app/kyc","request_id":"95799f96-ba79-4751-b9a4-f57f5bd22b55","status_code":200,"timestamp":"2026-03-15T19:39:09+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:39:10+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:39:10+08:00"}
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:160\n[1.089ms] [rows:-] \n        SELECT id, user_name, email, login_password, tenant_id, status,\n               last_login_time, COALESCE(last_login_ip, '') AS last_login_ip,\n               register_time, update_time\n        FROM tenant_user\n        WHERE (user_name = '' OR email = 'codex_app_live_001@example.com')\n        LIMIT 1"
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:39:10+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:39:10+08:00"}
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:160\n[1.062ms] [rows:-] \n        SELECT id, user_name, email, login_password, tenant_id, status,\n               last_login_time, COALESCE(last_login_ip, '') AS last_login_ip,\n               register_time, update_time\n        FROM tenant_user\n        WHERE (user_name = '' OR email = 'codex_app_live_001@example.com')\n        LIMIT 1"
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:335\n[4.000ms] [rows:1] UPDATE tenant_user SET last_login_time = '2026-03-15 19:39:10.751', last_login_ip = '172.19.0.1', update_time = '2026-03-15 19:39:10.751' WHERE id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005'"
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T19:39:10+08:00","user_id":"019cf14a-a803-7c2b-bbe0-bdbb35d3c005","username":"codex_app_live_001"}
+{"client_ip":"172.19.0.1","duration_ms":243,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"e2ddc719-35ca-4512-a720-c3b291050288","status_code":200,"timestamp":"2026-03-15T19:39:10+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:39:10+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:39:10+08:00"}
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:379\n[1.068ms] [rows:1] SELECT * FROM \"tenant_user\" WHERE id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005' ORDER BY \"tenant_user\".\"id\" LIMIT 1"
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:394\n[0.520ms] [rows:0] SELECT * FROM \"tenant_user_kyc\" WHERE user_id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005' AND deleted_at IS NULL ORDER BY \"tenant_user_kyc\".\"id\" LIMIT 1"
+{"client_ip":"172.19.0.1","duration_ms":2,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/auth/v1/app/kyc","request_id":"7cb945a8-763f-4218-b5ea-3423ec57f74b","status_code":200,"timestamp":"2026-03-15T19:39:10+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:335\n[3.215ms] [rows:1] UPDATE tenant_user SET last_login_time = '2026-03-15 19:39:10.772', last_login_ip = '172.19.0.1', update_time = '2026-03-15 19:39:10.772' WHERE id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005'"
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T19:39:10+08:00","user_id":"019cf14a-a803-7c2b-bbe0-bdbb35d3c005","username":"codex_app_live_001"}
+{"client_ip":"172.19.0.1","duration_ms":242,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"f175c31b-c194-425e-8b71-bbf3ece3b6ce","status_code":200,"timestamp":"2026-03-15T19:39:10+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T19:39:10+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T19:39:10+08:00"}
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:379\n[1.070ms] [rows:1] SELECT * FROM \"tenant_user\" WHERE id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005' ORDER BY \"tenant_user\".\"id\" LIMIT 1"
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:394\n[0.527ms] [rows:0] SELECT * FROM \"tenant_user_kyc\" WHERE user_id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005' AND deleted_at IS NULL ORDER BY \"tenant_user_kyc\".\"id\" LIMIT 1"
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:405\n[0.526ms] [rows:0] SELECT * FROM \"tenant_user_kyc\" WHERE user_id = '019cf14a-a803-7c2b-bbe0-bdbb35d3c005' AND deleted_at IS NULL ORDER BY \"tenant_user_kyc\".\"id\" LIMIT 1"
+time="2026-03-15T19:39:10+08:00" level=info msg="/src/internal/infrastructure/database/auth/repository/auth.go:411 ERROR: column \"selfie_url\" of relation \"tenant_user_kyc\" does not exist (SQLSTATE 42703)\n[2.619ms] [rows:0] INSERT INTO \"tenant_user_kyc\" (\"tenant_id\",\"user_id\",\"business_id\",\"first_name\",\"last_name\",\"full_name\",\"gender\",\"dob\",\"place_of_birth\",\"country_of_birth\",\"nationality\",\"email\",\"phone\",\"address_country\",\"address_street\",\"address_building_number\",\"address_flat_number\",\"address_town\",\"address_state\",\"address_post_code\",\"address_formatted_address\",\"tin\",\"metadata\",\"id_card_front_url\",\"id_card_back_url\",\"selfie_url\",\"status\",\"reject_reason\",\"deleted_at\",\"id\",\"created_at\",\"updated_at\") VALUES ('7b49a938-0f04-4a21-987d-627417816f49','019cf14a-a803-7c2b-bbe0-bdbb35d3c005','kyc_019cf14aa8037c2bbbe0bdbb35d3c005','Li','Lei','Li Lei','M','1995-08-18 00:00:00',NULL,'CHN','CHN','codex_app_live_001@example.com','13800138000','CHN','Pudong Avenue','100','802','Shanghai','Shanghai','200120','Pudong Avenue 100, Room 802, Shanghai','TAX123456','{\"internalKyc\":true,\"reviewMode\":\"instant_approve\"}','https://example.com/front.jpg','https://example.com/back.jpg','https://example.com/selfie.jpg',1,NULL,NULL,'019cf14b-024c-79b2-a7d4-39594f087031','2026-03-15 19:39:10.796','2026-03-15 19:39:10.796') RETURNING \"id\",\"created_at\",\"updated_at\""
+{"client_ip":"172.19.0.1","duration_ms":6,"error":"","level":"warning","message":"HTTP请求","method":"PUT","path":"/auth/v1/app/kyc","request_id":"b34e76e8-c448-48f9-9461-8245432cca37","status_code":400,"timestamp":"2026-03-15T19:39:10+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+2026/03/15 19:45:25 配置加载失败: 配置验证失败: 缺少环境变量或配置项: NH_JWT_SECRET
+2026/03/15 19:46:56 配置加载失败: 配置验证失败: 缺少环境变量或配置项: NH_JWT_SECRET
+2026/03/15 20:51:19 🚀 Starting auth-service
+Version: 1.0.0
+BuildTime: 
+GitCommit: 
+GitTag: 
+GoVersion: go1.24.13
+Platform: windows/amd64
+{"fields.level":"debug","format":"json","level":"info","message":"日志系统初始化成功","output":"console","timestamp":"2026-03-15T20:51:19+08:00"}
+{"backend":"OpenTelemetry","endpoint":"http://localhost:14268/api/traces","level":"info","message":"Tracing initialized with OpenTelemetry backend","sample_rate":1,"service_name":"auth-service","timestamp":"2026-03-15T20:51:19+08:00"}
+{"enabled":true,"endpoint":"http://localhost:14268/api/traces","level":"info","message":"OpenTelemetry tracer initialized successfully","service":"auth-service","timestamp":"2026-03-15T20:51:19+08:00"}
+time="2026-03-15T20:51:19+08:00" level=info msg="/src/pkg/database/database.go:47\n[error] failed to initialize database, got error failed to connect to `user=postgres database=nh_wallet`:\n\t[::1]:5432 (localhost): dial error: dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.\n\t127.0.0.1:5432 (localhost): dial error: dial tcp 127.0.0.1:5432: connectex: No connection could be made because the target machine actively refused it."
+{"error":"连接数据库失败: failed to connect to `user=postgres database=nh_wallet`:\n\t[::1]:5432 (localhost): dial error: dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.\n\t127.0.0.1:5432 (localhost): dial error: dial tcp 127.0.0.1:5432: connectex: No connection could be made because the target machine actively refused it.","level":"error","message":"初始化数据库失败，继续启动","timestamp":"2026-03-15T20:51:19+08:00"}
+time="2026-03-15T20:51:19+08:00" level=info msg="Redis连接成功" addr="localhost:6379" db=0
+{"components":"repositories, services, handlers, infrastructure","level":"info","message":"Auth依赖注入完成","service":"auth","timestamp":"2026-03-15T20:51:19+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T20:51:19+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T20:51:19+08:00"}
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> nh/wallet/pkg/health.(*Checker).Health-fm (8 handlers)
+[GIN-debug] GET    /ready                    --> nh/wallet/internal/adapters/http/auth/routes.RegisterAPIRoutes.func1 (8 handlers)
+[GIN-debug] POST   /auth/v1/login            --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).Login-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/refresh          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).RefreshToken-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/validate         --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ValidateToken-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/permission/check --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).CheckPermission-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/email/send-code --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).SendAppEmailCode-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/email/verify --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).VerifyAppEmailCode-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/register     --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).RegisterAppUser-fm (9 handlers)
+[GIN-debug] GET    /auth/v1/app/countries    --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetCountryOptions-fm (9 handlers)
+[GIN-debug] GET    /auth/v1/auth/profile     --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetProfile-fm (10 handlers)
+[GIN-debug] POST   /auth/v1/auth/password/change --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ChangePassword-fm (10 handlers)
+[GIN-debug] POST   /auth/v1/auth/logout      --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).Logout-fm (10 handlers)
+[GIN-debug] GET    /auth/v1/app/profile      --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetAppProfile-fm (11 handlers)
+[GIN-debug] GET    /auth/v1/app/kyc          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetAppKYC-fm (11 handlers)
+[GIN-debug] PUT    /auth/v1/app/kyc          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).SubmitAppKYC-fm (11 handlers)
+[GIN-debug] POST   /internal/v1/auth/validate --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ValidateToken-fm (9 handlers)
+[GIN-debug] POST   /internal/v1/auth/permission/check --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).CheckPermission-fm (9 handlers)
+{"level":"info","message":"认证路由初始化完成","service":"auth","timestamp":"2026-03-15T20:51:19+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T20:51:19+08:00"}
+{"buildInfo":null,"env":"development","host":"127.0.0.1","level":"info","message":"认证服务启动完成","port":18001,"timestamp":"2026-03-15T20:51:19+08:00"}
+{"error":"listen tcp :18001: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.","level":"fatal","message":"认证服务启动失败","timestamp":"2026-03-15T20:51:19+08:00"}
+2026/03/15 21:57:52 🚀 Starting auth-service
+Version: 1.0.0
+BuildTime: 
+GitCommit: 
+GitTag: 
+GoVersion: go1.24.13
+Platform: windows/amd64
+{"fields.level":"debug","format":"json","level":"info","message":"日志系统初始化成功","output":"console","timestamp":"2026-03-15T21:57:52+08:00"}
+{"backend":"OpenTelemetry","endpoint":"http://localhost:14268/api/traces","level":"info","message":"Tracing initialized with OpenTelemetry backend","sample_rate":1,"service_name":"auth-service","timestamp":"2026-03-15T21:57:52+08:00"}
+{"enabled":true,"endpoint":"http://localhost:14268/api/traces","level":"info","message":"OpenTelemetry tracer initialized successfully","service":"auth-service","timestamp":"2026-03-15T21:57:52+08:00"}
+time="2026-03-15T21:57:52+08:00" level=info msg="数据库连接成功" database=nh_wallet host=localhost port=5432 user=postgres
+time="2026-03-15T21:57:52+08:00" level=info msg="Redis连接成功" addr="localhost:6379" db=0
+{"components":"repositories, services, handlers, infrastructure","level":"info","message":"Auth依赖注入完成","service":"auth","timestamp":"2026-03-15T21:57:52+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T21:57:52+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T21:57:52+08:00"}
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> nh/wallet/pkg/health.(*Checker).Health-fm (8 handlers)
+[GIN-debug] GET    /ready                    --> nh/wallet/internal/adapters/http/auth/routes.RegisterAPIRoutes.func1 (8 handlers)
+[GIN-debug] POST   /auth/v1/login            --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).Login-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/refresh          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).RefreshToken-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/validate         --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ValidateToken-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/permission/check --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).CheckPermission-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/email/send-code --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).SendAppEmailCode-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/email/verify --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).VerifyAppEmailCode-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/register     --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).RegisterAppUser-fm (9 handlers)
+[GIN-debug] GET    /auth/v1/app/countries    --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetCountryOptions-fm (9 handlers)
+[GIN-debug] GET    /auth/v1/auth/profile     --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetProfile-fm (10 handlers)
+[GIN-debug] POST   /auth/v1/auth/password/change --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ChangePassword-fm (10 handlers)
+[GIN-debug] POST   /auth/v1/auth/logout      --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).Logout-fm (10 handlers)
+[GIN-debug] GET    /auth/v1/app/profile      --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetAppProfile-fm (11 handlers)
+[GIN-debug] GET    /auth/v1/app/kyc          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetAppKYC-fm (11 handlers)
+[GIN-debug] PUT    /auth/v1/app/kyc          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).SubmitAppKYC-fm (11 handlers)
+[GIN-debug] POST   /internal/v1/auth/validate --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ValidateToken-fm (9 handlers)
+[GIN-debug] POST   /internal/v1/auth/permission/check --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).CheckPermission-fm (9 handlers)
+{"level":"info","message":"认证路由初始化完成","service":"auth","timestamp":"2026-03-15T21:57:52+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T21:57:52+08:00"}
+{"buildInfo":null,"env":"development","host":"127.0.0.1","level":"info","message":"认证服务启动完成","port":18001,"timestamp":"2026-03-15T21:57:52+08:00"}
+{"error":"listen tcp :18001: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.","level":"fatal","message":"认证服务启动失败","timestamp":"2026-03-15T21:57:52+08:00"}
+2026/03/15 21:58:29 🚀 Starting auth-service
+Version: 1.0.0
+BuildTime: 
+GitCommit: 
+GitTag: 
+GoVersion: go1.24.1
+Platform: windows/amd64
+{"fields.level":"debug","format":"json","level":"info","message":"日志系统初始化成功","output":"console","timestamp":"2026-03-15T21:58:29+08:00"}
+{"backend":"OpenTelemetry","endpoint":"http://localhost:14268/api/traces","level":"info","message":"Tracing initialized with OpenTelemetry backend","sample_rate":1,"service_name":"auth-service","timestamp":"2026-03-15T21:58:29+08:00"}
+{"enabled":true,"endpoint":"http://localhost:14268/api/traces","level":"info","message":"OpenTelemetry tracer initialized successfully","service":"auth-service","timestamp":"2026-03-15T21:58:29+08:00"}
+time="2026-03-15T21:58:29+08:00" level=info msg="数据库连接成功" database=nh_wallet host=localhost port=5432 user=postgres
+time="2026-03-15T21:58:29+08:00" level=info msg="Redis连接成功" addr="localhost:6379" db=0
+{"components":"repositories, services, handlers, infrastructure","level":"info","message":"Auth依赖注入完成","service":"auth","timestamp":"2026-03-15T21:58:29+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T21:58:29+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T21:58:29+08:00"}
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /health                   --> nh/wallet/pkg/health.(*Checker).Health-fm (8 handlers)
+[GIN-debug] GET    /ready                    --> nh/wallet/internal/adapters/http/auth/routes.RegisterAPIRoutes.func1 (8 handlers)
+[GIN-debug] POST   /auth/v1/login            --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).Login-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/refresh          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).RefreshToken-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/validate         --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ValidateToken-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/permission/check --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).CheckPermission-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/email/send-code --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).SendAppEmailCode-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/email/verify --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).VerifyAppEmailCode-fm (9 handlers)
+[GIN-debug] POST   /auth/v1/app/register     --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).RegisterAppUser-fm (9 handlers)
+[GIN-debug] GET    /auth/v1/app/countries    --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetCountryOptions-fm (9 handlers)
+[GIN-debug] GET    /auth/v1/auth/profile     --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetProfile-fm (10 handlers)
+[GIN-debug] POST   /auth/v1/auth/password/change --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ChangePassword-fm (10 handlers)
+[GIN-debug] POST   /auth/v1/auth/logout      --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).Logout-fm (10 handlers)
+[GIN-debug] GET    /auth/v1/app/profile      --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetAppProfile-fm (11 handlers)
+[GIN-debug] GET    /auth/v1/app/kyc          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).GetAppKYC-fm (11 handlers)
+[GIN-debug] PUT    /auth/v1/app/kyc          --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).SubmitAppKYC-fm (11 handlers)
+[GIN-debug] POST   /internal/v1/auth/validate --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).ValidateToken-fm (9 handlers)
+[GIN-debug] POST   /internal/v1/auth/permission/check --> nh/wallet/internal/adapters/http/auth/handler.(*AuthHandler).CheckPermission-fm (9 handlers)
+{"level":"info","message":"认证路由初始化完成","service":"auth","timestamp":"2026-03-15T21:58:29+08:00"}
+{"level":"info","message":"[shutdown] Registering shutdown function","timestamp":"2026-03-15T21:58:29+08:00"}
+{"buildInfo":null,"env":"development","host":"127.0.0.1","level":"info","message":"认证服务启动完成","port":18001,"timestamp":"2026-03-15T21:58:29+08:00"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T21:58:34+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T21:58:34+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"Connected to NATS JetStream","server_id":"NCM5ROT4LTVBLPAEN5LYRB4XM2XHXJ72JPYRQDPCQKA36LPMKBLGQUPJ","timestamp":"2026-03-15T21:58:34+08:00","url":"nats://localhost:4222"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T21:58:34+08:00"}
+{"client_id":"nh-wallet-client","level":"info","message":"NATS connection closed","timestamp":"2026-03-15T21:58:34+08:00"}
+{"client_ip":"127.0.0.1","duration_ms":750,"error":"","level":"info","message":"HTTP请求","method":"GET","path":"/health","request_id":"7a6bcd3c-0acb-48f2-9301-618adf9e68b9","status_code":200,"timestamp":"2026-03-15T21:58:35+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T21:59:25+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T21:59:25+08:00"}
+time="2026-03-15T21:59:25+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[11.000ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = 'tenant@example.com' OR email = '') AND deleted_at IS NULL\n        LIMIT 1"
+{"error":"用户不存在","level":"error","message":"获取用户信息失败","timestamp":"2026-03-15T21:59:25+08:00"}
+{"client_ip":"172.19.0.1","error":"用户名或密码错误","level":"warning","message":"用户登录失败","timestamp":"2026-03-15T21:59:25+08:00","user_type":"tenant","username":"tenant@example.com"}
+{"error":"用户名或密码错误","level":"error","message":"用户登录失败","timestamp":"2026-03-15T21:59:25+08:00"}
+{"client_ip":"172.19.0.1","duration_ms":11,"error":"","level":"warning","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"d949a966-2a13-4e10-b936-042416d24c13","status_code":401,"timestamp":"2026-03-15T21:59:25+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T22:01:22+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T22:01:22+08:00"}
+time="2026-03-15T22:01:22+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[1.591ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = '' OR email = 'tenant@example.com') AND deleted_at IS NULL\n        LIMIT 1"
+time="2026-03-15T22:01:22+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:336\n[7.003ms] [rows:1] UPDATE tenants SET last_login_at = '2026-03-15 22:01:22.71', last_login_ip = '172.19.0.1', login_count = COALESCE(login_count, 0) + 1, updated_at = '2026-03-15 22:01:22.71' WHERE id = '7b49a938-0f04-4a21-987d-627417816f49'"
+time="2026-03-15T22:01:22+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:188 ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)\n[1.999ms] [rows:0] INSERT INTO \"tenant_login_logs\" (\"created_by\",\"updated_by\",\"deleted_by\",\"created_at\",\"updated_at\",\"deleted_at\",\"user_id\",\"username\",\"login_ip\",\"user_agent\",\"login_method\",\"login_status\",\"failure_reason\",\"session_id\") VALUES (NULL,NULL,NULL,'2026-03-15 14:01:22.723','2026-03-15 14:01:22.723',NULL,'7b49a938-0f04-4a21-987d-627417816f49','tenant_demo','172.19.0.1','Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803','password',1,'','') RETURNING \"id\""
+{"error":"ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)","level":"error","message":"保存登录日志失败","timestamp":"2026-03-15T22:01:22+08:00"}
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T22:01:22+08:00","user_id":"7b49a938-0f04-4a21-987d-627417816f49","username":"tenant_demo"}
+{"client_ip":"172.19.0.1","duration_ms":92,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"2b794556-6b52-48e6-9f04-18bb271a6064","status_code":200,"timestamp":"2026-03-15T22:01:22+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T22:01:55+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T22:01:55+08:00"}
+time="2026-03-15T22:01:55+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[1.055ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = '' OR email = 'tenant@example.com') AND deleted_at IS NULL\n        LIMIT 1"
+time="2026-03-15T22:01:55+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:336\n[8.268ms] [rows:1] UPDATE tenants SET last_login_at = '2026-03-15 22:01:55.325', last_login_ip = '172.19.0.1', login_count = COALESCE(login_count, 0) + 1, updated_at = '2026-03-15 22:01:55.325' WHERE id = '7b49a938-0f04-4a21-987d-627417816f49'"
+time="2026-03-15T22:01:55+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:188 ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)\n[0.708ms] [rows:0] INSERT INTO \"tenant_login_logs\" (\"created_by\",\"updated_by\",\"deleted_by\",\"created_at\",\"updated_at\",\"deleted_at\",\"user_id\",\"username\",\"login_ip\",\"user_agent\",\"login_method\",\"login_status\",\"failure_reason\",\"session_id\") VALUES (NULL,NULL,NULL,'2026-03-15 14:01:55.335','2026-03-15 14:01:55.335',NULL,'7b49a938-0f04-4a21-987d-627417816f49','tenant_demo','172.19.0.1','Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803','password',1,'','') RETURNING \"id\""
+{"error":"ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)","level":"error","message":"保存登录日志失败","timestamp":"2026-03-15T22:01:55+08:00"}
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T22:01:55+08:00","user_id":"7b49a938-0f04-4a21-987d-627417816f49","username":"tenant_demo"}
+{"client_ip":"172.19.0.1","duration_ms":66,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"42e15380-73ca-4407-8b72-43f3599c80b2","status_code":200,"timestamp":"2026-03-15T22:01:55+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T22:01:56+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T22:01:56+08:00"}
+time="2026-03-15T22:01:56+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[1.050ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = '' OR email = 'tenant@example.com') AND deleted_at IS NULL\n        LIMIT 1"
+time="2026-03-15T22:01:56+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:336\n[5.704ms] [rows:1] UPDATE tenants SET last_login_at = '2026-03-15 22:01:56.989', last_login_ip = '172.19.0.1', login_count = COALESCE(login_count, 0) + 1, updated_at = '2026-03-15 22:01:56.989' WHERE id = '7b49a938-0f04-4a21-987d-627417816f49'"
+time="2026-03-15T22:01:56+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:188 ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)\n[1.127ms] [rows:0] INSERT INTO \"tenant_login_logs\" (\"created_by\",\"updated_by\",\"deleted_by\",\"created_at\",\"updated_at\",\"deleted_at\",\"user_id\",\"username\",\"login_ip\",\"user_agent\",\"login_method\",\"login_status\",\"failure_reason\",\"session_id\") VALUES (NULL,NULL,NULL,'2026-03-15 14:01:56.997','2026-03-15 14:01:56.997',NULL,'7b49a938-0f04-4a21-987d-627417816f49','tenant_demo','172.19.0.1','Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803','password',1,'','') RETURNING \"id\""
+{"error":"ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)","level":"error","message":"保存登录日志失败","timestamp":"2026-03-15T22:01:56+08:00"}
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T22:01:56+08:00","user_id":"7b49a938-0f04-4a21-987d-627417816f49","username":"tenant_demo"}
+{"client_ip":"172.19.0.1","duration_ms":67,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"aa3db7f7-7c0c-48be-b0f7-bea454554ca6","status_code":200,"timestamp":"2026-03-15T22:01:56+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T22:02:25+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T22:02:25+08:00"}
+time="2026-03-15T22:02:25+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[1.562ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = '' OR email = 'tenant@example.com') AND deleted_at IS NULL\n        LIMIT 1"
+time="2026-03-15T22:02:25+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:336\n[9.292ms] [rows:1] UPDATE tenants SET last_login_at = '2026-03-15 22:02:25.127', last_login_ip = '172.19.0.1', login_count = COALESCE(login_count, 0) + 1, updated_at = '2026-03-15 22:02:25.127' WHERE id = '7b49a938-0f04-4a21-987d-627417816f49'"
+time="2026-03-15T22:02:25+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:188 ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)\n[2.107ms] [rows:0] INSERT INTO \"tenant_login_logs\" (\"created_by\",\"updated_by\",\"deleted_by\",\"created_at\",\"updated_at\",\"deleted_at\",\"user_id\",\"username\",\"login_ip\",\"user_agent\",\"login_method\",\"login_status\",\"failure_reason\",\"session_id\") VALUES (NULL,NULL,NULL,'2026-03-15 14:02:25.14','2026-03-15 14:02:25.14',NULL,'7b49a938-0f04-4a21-987d-627417816f49','tenant_demo','172.19.0.1','Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803','password',1,'','') RETURNING \"id\""
+{"error":"ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)","level":"error","message":"保存登录日志失败","timestamp":"2026-03-15T22:02:25+08:00"}
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T22:02:25+08:00","user_id":"7b49a938-0f04-4a21-987d-627417816f49","username":"tenant_demo"}
+{"client_ip":"172.19.0.1","duration_ms":68,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"c3eca1c7-0b8d-44e8-848f-14686e65c9a9","status_code":200,"timestamp":"2026-03-15T22:02:25+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T22:02:49+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T22:02:49+08:00"}
+time="2026-03-15T22:02:49+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[1.581ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = '' OR email = 'tenant@example.com') AND deleted_at IS NULL\n        LIMIT 1"
+time="2026-03-15T22:02:49+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:336\n[7.007ms] [rows:1] UPDATE tenants SET last_login_at = '2026-03-15 22:02:49.835', last_login_ip = '172.19.0.1', login_count = COALESCE(login_count, 0) + 1, updated_at = '2026-03-15 22:02:49.835' WHERE id = '7b49a938-0f04-4a21-987d-627417816f49'"
+time="2026-03-15T22:02:49+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:188 ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)\n[1.091ms] [rows:0] INSERT INTO \"tenant_login_logs\" (\"created_by\",\"updated_by\",\"deleted_by\",\"created_at\",\"updated_at\",\"deleted_at\",\"user_id\",\"username\",\"login_ip\",\"user_agent\",\"login_method\",\"login_status\",\"failure_reason\",\"session_id\") VALUES (NULL,NULL,NULL,'2026-03-15 14:02:49.845','2026-03-15 14:02:49.845',NULL,'7b49a938-0f04-4a21-987d-627417816f49','tenant_demo','172.19.0.1','Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803','password',1,'','') RETURNING \"id\""
+{"error":"ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)","level":"error","message":"保存登录日志失败","timestamp":"2026-03-15T22:02:49+08:00"}
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T22:02:49+08:00","user_id":"7b49a938-0f04-4a21-987d-627417816f49","username":"tenant_demo"}
+{"client_ip":"172.19.0.1","duration_ms":65,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"9a8f325d-7580-40b5-88a3-c8946325fcff","status_code":200,"timestamp":"2026-03-15T22:02:49+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T22:05:37+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T22:05:37+08:00"}
+time="2026-03-15T22:05:37+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[19.316ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = '' OR email = 'tenant@example.com') AND deleted_at IS NULL\n        LIMIT 1"
+time="2026-03-15T22:05:37+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:336\n[6.576ms] [rows:1] UPDATE tenants SET last_login_at = '2026-03-15 22:05:37.897', last_login_ip = '172.19.0.1', login_count = COALESCE(login_count, 0) + 1, updated_at = '2026-03-15 22:05:37.897' WHERE id = '7b49a938-0f04-4a21-987d-627417816f49'"
+time="2026-03-15T22:05:37+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:188 ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)\n[1.999ms] [rows:0] INSERT INTO \"tenant_login_logs\" (\"created_by\",\"updated_by\",\"deleted_by\",\"created_at\",\"updated_at\",\"deleted_at\",\"user_id\",\"username\",\"login_ip\",\"user_agent\",\"login_method\",\"login_status\",\"failure_reason\",\"session_id\") VALUES (NULL,NULL,NULL,'2026-03-15 14:05:37.907','2026-03-15 14:05:37.907',NULL,'7b49a938-0f04-4a21-987d-627417816f49','tenant_demo','172.19.0.1','Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803','password',1,'','') RETURNING \"id\""
+{"error":"ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)","level":"error","message":"保存登录日志失败","timestamp":"2026-03-15T22:05:37+08:00"}
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T22:05:37+08:00","user_id":"7b49a938-0f04-4a21-987d-627417816f49","username":"tenant_demo"}
+{"client_ip":"172.19.0.1","duration_ms":93,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"108e8728-3404-4129-8724-427bc7de9977","status_code":200,"timestamp":"2026-03-15T22:05:37+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T22:10:48+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T22:10:48+08:00"}
+time="2026-03-15T22:10:48+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[18.116ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = '' OR email = 'tenant@example.com') AND deleted_at IS NULL\n        LIMIT 1"
+time="2026-03-15T22:10:48+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:336\n[9.601ms] [rows:1] UPDATE tenants SET last_login_at = '2026-03-15 22:10:48.975', last_login_ip = '172.19.0.1', login_count = COALESCE(login_count, 0) + 1, updated_at = '2026-03-15 22:10:48.975' WHERE id = '7b49a938-0f04-4a21-987d-627417816f49'"
+time="2026-03-15T22:10:48+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:188 ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)\n[1.092ms] [rows:0] INSERT INTO \"tenant_login_logs\" (\"created_by\",\"updated_by\",\"deleted_by\",\"created_at\",\"updated_at\",\"deleted_at\",\"user_id\",\"username\",\"login_ip\",\"user_agent\",\"login_method\",\"login_status\",\"failure_reason\",\"session_id\") VALUES (NULL,NULL,NULL,'2026-03-15 14:10:48.987','2026-03-15 14:10:48.987',NULL,'7b49a938-0f04-4a21-987d-627417816f49','tenant_demo','172.19.0.1','Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803','password',1,'','') RETURNING \"id\""
+{"error":"ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)","level":"error","message":"保存登录日志失败","timestamp":"2026-03-15T22:10:48+08:00"}
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T22:10:48+08:00","user_id":"7b49a938-0f04-4a21-987d-627417816f49","username":"tenant_demo"}
+{"client_ip":"172.19.0.1","duration_ms":85,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"827ec336-8452-4031-a02c-57228e2586db","status_code":200,"timestamp":"2026-03-15T22:10:48+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Checking if can accept new requests","timestamp":"2026-03-15T22:11:14+08:00"}
+{"level":"info","message":"[shutdown] Starting task","timestamp":"2026-03-15T22:11:14+08:00"}
+time="2026-03-15T22:11:14+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:133\n[1.597ms] [rows:-] \n        SELECT id, name, email, password, status,\n               last_login_at, COALESCE(last_login_ip::text, '') AS last_login_ip,\n               COALESCE(login_count, 0) AS login_count, created_at, updated_at\n        FROM tenants\n        WHERE (name = '' OR email = 'tenant@example.com') AND deleted_at IS NULL\n        LIMIT 1"
+time="2026-03-15T22:11:14+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:336\n[5.885ms] [rows:1] UPDATE tenants SET last_login_at = '2026-03-15 22:11:14.323', last_login_ip = '172.19.0.1', login_count = COALESCE(login_count, 0) + 1, updated_at = '2026-03-15 22:11:14.323' WHERE id = '7b49a938-0f04-4a21-987d-627417816f49'"
+time="2026-03-15T22:11:14+08:00" level=info msg="D:/snow/ustarpay-backend-go/internal/infrastructure/database/auth/repository/auth.go:188 ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)\n[0.516ms] [rows:0] INSERT INTO \"tenant_login_logs\" (\"created_by\",\"updated_by\",\"deleted_by\",\"created_at\",\"updated_at\",\"deleted_at\",\"user_id\",\"username\",\"login_ip\",\"user_agent\",\"login_method\",\"login_status\",\"failure_reason\",\"session_id\") VALUES (NULL,NULL,NULL,'2026-03-15 14:11:14.331','2026-03-15 14:11:14.331',NULL,'7b49a938-0f04-4a21-987d-627417816f49','tenant_demo','172.19.0.1','Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803','password',1,'','') RETURNING \"id\""
+{"error":"ERROR: relation \"tenant_login_logs\" does not exist (SQLSTATE 42P01)","level":"error","message":"保存登录日志失败","timestamp":"2026-03-15T22:11:14+08:00"}
+{"client_ip":"172.19.0.1","level":"info","message":"用户登录成功","timestamp":"2026-03-15T22:11:14+08:00","user_id":"7b49a938-0f04-4a21-987d-627417816f49","username":"tenant_demo"}
+{"client_ip":"172.19.0.1","duration_ms":77,"error":"","level":"info","message":"HTTP请求","method":"POST","path":"/auth/v1/login","request_id":"437e68fe-540e-4875-a4f7-66ca7395cdbf","status_code":200,"timestamp":"2026-03-15T22:11:14+08:00","user_agent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.19041.3803"}
+{"level":"info","message":"[shutdown] Received signal: %v","signal":15,"timestamp":"2026-03-15T22:22:53+08:00"}
+{"level":"info","message":"[shutdown] Stopping accepting new requests","timestamp":"2026-03-15T22:22:53+08:00"}
+{"level":"info","message":"[shutdown] Starting graceful shutdown...","timestamp":"2026-03-15T22:22:53+08:00"}
+{"level":"info","message":"[shutdown] All active tasks completed","timestamp":"2026-03-15T22:22:53+08:00"}
+{"level":"info","message":"[shutdown] Closing database connection...","timestamp":"2026-03-15T22:22:53+08:00"}
+{"level":"info","message":"[shutdown] Database closed","timestamp":"2026-03-15T22:22:54+08:00"}
+{"level":"info","message":"[shutdown] Flushing metrics before shutdown...","timestamp":"2026-03-15T22:22:54+08:00"}
+{"level":"info","message":"Shutting down Auth HTTP server...","timestamp":"2026-03-15T22:22:54+08:00"}
+{"error":"http: Server closed","level":"fatal","message":"认证服务启动失败","timestamp":"2026-03-15T22:22:54+08:00"}
+{"level":"info","message":"[shutdown] Shutting down infrastructure components...","timestamp":"2026-03-15T22:22:54+08:00"}
